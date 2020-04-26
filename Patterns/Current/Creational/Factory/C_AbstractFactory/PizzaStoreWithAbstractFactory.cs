@@ -28,28 +28,48 @@ namespace CreationalPatterns.Factory.C_AbstractFactory
         }
     }
 
-    public class NewYorkPizzaStoreWithAbstractFactory : 
-        PizzaStoreWithAbstractFactory
+    public class NewYorkPizzaStoreWithAbstractFactory : PizzaStoreWithAbstractFactory
     {
-        public NewYorkPizzaStoreWithAbstractFactory() : 
-            this(new NewYorkPizzaFactory()) { }
-        public NewYorkPizzaStoreWithAbstractFactory(
-            IPizzaFactory pizzaFactory) : 
-            base(pizzaFactory) { }
+        public NewYorkPizzaStoreWithAbstractFactory() :
+            this(new NewYorkPizzaFactory())
+        { 
+        
+        }
 
+        public NewYorkPizzaStoreWithAbstractFactory(IPizzaFactory pizzaFactory) :
+            base(pizzaFactory)
+        { 
+        
+        }
     }
+
     public class ChicagoPizzaStoreWithAbstractFactory : PizzaStoreWithAbstractFactory
     {
-        public ChicagoPizzaStoreWithAbstractFactory() : 
-            this(new ChicagoPizzaFactory()) { }
+        public ChicagoPizzaStoreWithAbstractFactory() :
+            this(new ChicagoPizzaFactory())
+        { 
+        
+        }
+
         public ChicagoPizzaStoreWithAbstractFactory(IPizzaFactory pizzaFactory)
-            : base(pizzaFactory) { }
+            : base(pizzaFactory) 
+        {
+            
+        }
     }
+
     public class CaliforniaPizzaStoreWithAbstractFactory : PizzaStoreWithAbstractFactory
     {
-        public CaliforniaPizzaStoreWithAbstractFactory() : 
-            this(new CaliforniaPizzaFactory()) { }
+        public CaliforniaPizzaStoreWithAbstractFactory() :
+            this(new CaliforniaPizzaFactory())
+        { 
+        
+        }
+
         public CaliforniaPizzaStoreWithAbstractFactory(IPizzaFactory pizzaFactory)
-            : base(pizzaFactory) { }
+            : base(pizzaFactory) 
+        { 
+        
+        }
     }
 }

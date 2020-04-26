@@ -9,7 +9,6 @@ using System.Collections.Generic;
 
 namespace CreationalPatterns.Factory.B_FactoryMethod
 {
-    //TODO: IRL separate out
     public abstract class PizzaStore
     {
         public IPizza OrderPizza(IList<string> ingredients)
@@ -27,25 +26,23 @@ namespace CreationalPatterns.Factory.B_FactoryMethod
     {
         public override IPizza CreatePizza(IList<string> ingredients)
         {
-            //This is tied to a specific pizza implementation
             return new NewYorkPizza(ingredients);
         }
     }
+
     public class ChicagoPizzaStore : PizzaStore
     {
         public override IPizza CreatePizza(IList<string> ingredients)
         {
-            //This is tied to a specific pizza implementation
             return new ChicagoPizza(ingredients);
         }
     }
+
     public class CaliforniaPizzaStore : PizzaStore
     {
         public override IPizza CreatePizza(IList<string> ingredients)
         {
-            //This is tied to a specific pizza implementation
             return new CaliforniaPizza(ingredients);
         }
     }
-
 }

@@ -18,9 +18,10 @@ namespace CreationalPatternsTests.Factory.C_AbstractFactory
         [Fact]
         public void ShouldUserAnAbstractFactoryToCreatePizza()
         {
-            var sut = new NewYorkPizzaStoreWithAbstractFactory(
-                new ChicagoPizzaFactory()).OrderPizza(new List<string>());
-            Assert.NotNull(sut as ChicagoPizza);
+            var pizza = new NewYorkPizzaStoreWithAbstractFactory(new ChicagoPizzaFactory())
+                .OrderPizza(new List<string>());
+
+            Assert.NotNull(pizza as ChicagoPizza);
         }
 
     }

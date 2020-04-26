@@ -5,11 +5,7 @@
 // http://www.skimedic.com 20/06/2017
 // See License.txt for more information
 // =============================
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CreationalPatterns.Factory;
 using CreationalPatterns.Factory.A_SimpleFactory;
 using Xunit;
@@ -19,7 +15,6 @@ namespace CreationalPatternsTests.Factory.A_SimpleFactory
     [Collection("CreationalPatternsTests")]
     public class SimpleFactoryTests
     {
-
         [Theory]
         [InlineData(PizzaType.NewYork)]
         public void ShouldCreateDuplicateCodeAndReturnAPizza(PizzaType type)
@@ -38,14 +33,16 @@ namespace CreationalPatternsTests.Factory.A_SimpleFactory
                     pizza = new CaliforniaPizza(ingredients);
                     break;
             }
+
             Assert.NotNull(pizza as NewYorkPizza);
         }
+
         [Fact]
         public void ShouldCreateSpecificPizza()
         {
-            var sut = SimplePizzaFactory.CreatePizza(
-                PizzaType.NewYork, new List<string>());
-            Assert.NotNull(sut as NewYorkPizza);
+            var pizza = SimplePizzaFactory.CreatePizza(PizzaType.NewYork, new List<string>());
+
+            Assert.NotNull(pizza as NewYorkPizza);
         }
     }
 }
